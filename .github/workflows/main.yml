@@ -17,7 +17,7 @@ jobs:
         uses: jfversluis/dotnet-format@03d54ee3fc06731cbb17b39ef2411dc171d35c06
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          action: "fix"
+          action: "check"
           only-changed-files: true
 
       - name: Commit files
