@@ -4,16 +4,13 @@ jobs:
   dotnet-format:
     runs-on: ubuntu-latest
     steps:
+      - name: Install dotnet-format
+        run: dotnet tool install -g dotnet-format
+
       - name: Checkout repo
         uses: actions/checkout@v2
         with:
           ref: ${{ github.head_ref }}
-
-      - name: Add dotnet-format problem matcher
-        uses: xt0rted/dotnet-format-problem-matcher@v1
-
-      - name: Restore dotnet tools
-        uses: xt0rted/dotnet-tool-restore@v1
 
       - name: Run dotnet format
         id: format
