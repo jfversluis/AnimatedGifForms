@@ -19,6 +19,7 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           action: "check"
           only-changed-files: true
+          fail-fast: false
 
       - name: Commit files
         if: steps.format.outputs.has-changes == 'true'
